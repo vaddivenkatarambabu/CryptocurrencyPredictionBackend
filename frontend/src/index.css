@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 4%;
+    --foreground: 220 20% 90%;
+
+    --card: 240 15% 8%;
+    --card-foreground: 220 20% 90%;
+
+    --popover: 240 15% 8%;
+    --popover-foreground: 220 20% 90%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 240 20% 4%;
+
+    --secondary: 300 100% 50%;
+    --secondary-foreground: 240 20% 4%;
+
+    --muted: 240 10% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 130 100% 55%;
+    --accent-foreground: 240 20% 4%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 16%;
+    --input: 240 10% 16%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-cyan: 186 100% 50%;
+    --neon-magenta: 300 100% 50%;
+    --neon-green: 130 100% 55%;
+    --neon-red: 0 85% 55%;
+
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.08;
+
+    --sidebar-background: 240 15% 6%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 240 20% 4%;
+    --sidebar-accent: 240 10% 14%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 240 10% 16%;
+    --sidebar-ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Utility classes for the cyberpunk theme */
+@layer utilities {
+  .font-display {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .text-gradient-neon {
+    background: linear-gradient(135deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    backdrop-filter: blur(16px);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.15), 0 0 60px hsl(var(--neon-cyan) / 0.05);
+  }
+
+  .glow-text-cyan {
+    text-shadow: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--neon-cyan) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--neon-magenta) / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+}
